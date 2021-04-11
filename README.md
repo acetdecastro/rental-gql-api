@@ -1,5 +1,9 @@
-[] - Connect to MongoDB Atlas
-[] - user
-[] - Auth guard
-[] - room
-[] - agreement
+# Rental API
+
+### Tasks:
+
+- [ ] Connect to MongoDB Atlas
+- [ ] User module
+- [ ] Auth guard
+- [ ] Room module
+- [ ] Agreement module
