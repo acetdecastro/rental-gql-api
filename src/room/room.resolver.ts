@@ -1,4 +1,4 @@
-import { Args, Mutation, Resolver } from '@nestjs/graphql';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { CreateRoomInput, RoomType } from './room.type';
 import { RoomService } from './room.service';
 import { Room } from './room.entity';
@@ -8,7 +8,15 @@ export class RoomResolver {
   constructor(private roomService: RoomService) {}
 
   /**
-   * Mutations
+   * Query
+   */
+  @Query(() => [RoomType], { nullable: 'itemsAndList' })
+  async rooms(): Promise<Room[]> {
+    return this.roomService.find();
+  }
+
+  /**
+   * Mutation
    */
   @Mutation(() => RoomType, { nullable: true })
   async createRoom(@Args('input') input: CreateRoomInput): Promise<Room> {

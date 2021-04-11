@@ -11,6 +11,10 @@ export class RoomService extends CommonService {
     super({ context: 'Room' });
   }
 
+  async find(): Promise<Room[]> {
+    return this.RoomRepo.find();
+  }
+
   async createRoom(input: CreateRoomInput): Promise<Room> {
     const newRoom = this.RoomRepo.create({
       ...input,
