@@ -5,7 +5,7 @@ export class Room extends BaseEntity {
   @ObjectIdColumn()
   _id: string;
 
-  @Column()
+  @Column({ nullable: true })
   agreementIds: string[];
 
   @Column()
@@ -15,13 +15,16 @@ export class Room extends BaseEntity {
   name: string;
 
   @Column()
+  ratePer30Days: number;
+
+  @Column({ default: true })
   isWaterMetered: boolean;
 
-  @Column()
+  @Column({ default: true })
   isElectricityMetered: boolean;
 
-  @Column()
-  ratePerMonth: number;
+  @Column({ default: true })
+  isSharedCR: boolean;
 
   @Column('date', { default: new Date() })
   createdAt: Date;

@@ -2,7 +2,7 @@
 
 ### Tasks:
 
-- [ ] Connect to MongoDB Atlas
+- [x] Connect to MongoDB Atlas
 - [ ] User module
 - [ ] Auth guard
 - [ ] Room module
